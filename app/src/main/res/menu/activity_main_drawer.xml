@@ -3,24 +3,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
+    <!--Aquí se agregan las opciones al menú-->
+
     <group android:checkableBehavior="single">
+
+        <!--Esta es la opción de inicio-->
         <item
             android:id="@+id/nav_inicio"
             android:icon="@drawable/ic_inicio"
             android:title="@string/menu_inicio" />
+
+        <!--Esta es la opción de registrar-->
         <item
             android:id="@+id/nav_registrar"
             android:icon="@drawable/ic_registrar"
             android:title="@string/menu_registrar" />
 
+        <!--Esta es la opción de coros-->
         <item
             android:id="@+id/nav_coros"
             android:icon="@drawable/ic_musica"
             android:title="@string/menu_coros" />
+
+        <!--Esta es la opción de alabanzas-->
+        <item
+            android:id="@+id/nav_alabanzas"
+            android:icon="@drawable/ic_musica"
+            android:title="@string/menu_alabanzas" />
     </group>
 
     <item android:title="Comunicación">
         <menu>
+            <!--Esta es la opción de contacttanos-->
             <item
                 android:id="@+id/nav_contactanos"
                 android:icon="@drawable/ic_menu_send"
