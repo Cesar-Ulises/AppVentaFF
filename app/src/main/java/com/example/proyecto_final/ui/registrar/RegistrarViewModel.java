@@ -1,16 +1,16 @@
-package com.example.proyecto_final.ui.send;
+package com.example.proyecto_final.ui.registrar;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class SendViewModel extends ViewModel {
+public class RegistrarViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public SendViewModel() {
+    public RegistrarViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is send fragment");
+        mText.setValue("Registro");
     }
 
     public LiveData<String> getText() {

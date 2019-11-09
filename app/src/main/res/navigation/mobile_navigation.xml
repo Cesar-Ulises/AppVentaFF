@@ -3,41 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_inicio">
 
     <fragment
-        android:id="@+id/nav_home"
-        android:name="com.example.proyecto_final.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/nav_inicio"
+        android:name="com.example.proyecto_final.ui.inicio.InicioFragment"
+        android:label="@string/menu_inicio"
+        tools:layout="@layout/fragment_inicio" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.proyecto_final.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_registrar"
+        android:name="com.example.proyecto_final.ui.registrar.RegistrarFragment"
+        android:label="@string/menu_registrar"
+        tools:layout="@layout/fragment_registrar" />
+
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.proyecto_final.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_coros"
+        android:name="com.example.proyecto_final.ui.coros.CorosFragment"
+        android:label="@string/menu_coros"
+        tools:layout="@layout/fragment_coros" />
 
     <fragment
-        android:id="@+id/nav_tools"
-        android:name="com.example.proyecto_final.ui.tools.ToolsFragment"
-        android:label="@string/menu_tools"
-        tools:layout="@layout/fragment_tools" />
-
-    <fragment
-        android:id="@+id/nav_share"
-        android:name="com.example.proyecto_final.ui.share.ShareFragment"
-        android:label="@string/menu_share"
-        tools:layout="@layout/fragment_share" />
-
-    <fragment
-        android:id="@+id/nav_send"
-        android:name="com.example.proyecto_final.ui.send.SendFragment"
-        android:label="@string/menu_send"
-        tools:layout="@layout/fragment_send" />
+        android:id="@+id/nav_contactanos"
+        android:name="com.example.proyecto_final.ui.contactanos.ContactanosFragment"
+        android:label="@string/menu_contactanos"
+        tools:layout="@layout/fragment_contactanos" />
 </navigation>

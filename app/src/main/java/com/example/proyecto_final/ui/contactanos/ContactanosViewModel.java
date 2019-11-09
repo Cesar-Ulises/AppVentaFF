@@ -1,16 +1,16 @@
-package com.example.proyecto_final.ui.gallery;
+package com.example.proyecto_final.ui.contactanos;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class GalleryViewModel extends ViewModel {
+public class ContactanosViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public GalleryViewModel() {
+    public ContactanosViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is gallery fragment");
+        mText.setValue("Contactanos");
     }
 
     public LiveData<String> getText() {

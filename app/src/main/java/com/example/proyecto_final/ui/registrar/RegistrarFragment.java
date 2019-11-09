@@ -1,4 +1,4 @@
-package com.example.proyecto_final.ui.send;
+package com.example.proyecto_final.ui.registrar;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -6,25 +6,25 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.proyecto_final.R;
 
-public class SendFragment extends Fragment {
+public class RegistrarFragment extends Fragment {
 
-    private SendViewModel sendViewModel;
+    private RegistrarViewModel RegistrarFragment;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        sendViewModel =
-                ViewModelProviders.of(this).get(SendViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_send, container, false);
-        final TextView textView = root.findViewById(R.id.text_send);
-        sendViewModel.getText().observe(this, new Observer<String>() {
+        RegistrarFragment =
+                ViewModelProviders.of(this).get(RegistrarViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_registrar, container, false);
+        final TextView textView = root.findViewById(R.id.text_registrar);
+        RegistrarFragment.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
