@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
 
-    //############################################################################################################
+                //############################################################################################################
                 //Aquí agrego las opciones que no quiero que les aparezca la flecha de retrceder el en toolbar
                 R.id.nav_inicio)
                 .setDrawerLayout(drawer)
