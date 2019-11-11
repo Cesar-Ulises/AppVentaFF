@@ -33,6 +33,7 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:orientation="horizontal"
         android:padding="5dp">
 
@@ -348,4 +349,9 @@
         <!--LineaLayout del ScrollView-->
     </LinearLayout>
  </ScrollView>
+=======
+        android:text="Este es un ejemplo"
+        />
+
+>>>>>>> d3316cd08e4546a10d6195ba3d189269fd4b9437
 </LinearLayout>
