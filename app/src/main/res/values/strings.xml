@@ -8,9 +8,12 @@
     <string name="action_settings">Settings</string>
 
     <string name="menu_inicio">inicio</string>
-    <string name="menu_registrar">Registrar</string>
+    <string name="menu_registrar">Registrar Alabanzas</string>
+    <string name="menu_registrarCoros">Registrar Coros Alegres</string>
+    <string name="menu_registrarCorosAdo">Registrar Coros de Adoración</string>
     <string name="menu_send">Send</string>
-    <string name="menu_coros">Coros</string>
+    <string name="menu_coros">Coros Alegres</string>
+    <string name="menu_corosAdo">Coros de Adoración</string>
     <string name="menu_alabanzas">Alabanzas</string>
     <string name="menu_contactanos">Contactanos</string>
 

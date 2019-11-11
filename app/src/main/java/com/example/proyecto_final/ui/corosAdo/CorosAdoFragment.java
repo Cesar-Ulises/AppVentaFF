@@ -1,4 +1,4 @@
-package com.example.proyecto_final.ui.registrar;
+package com.example.proyecto_final.ui.corosAdo;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.proyecto_final.R;
 
-public class RegistrarFragment extends Fragment {
+public class CorosAdoFragment extends Fragment {
 
-    private RegistrarViewModel RegistrarFragment;
+    private CorosAdoViewModel CorosAdoFragment;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        RegistrarFragment =
-                ViewModelProviders.of(this).get(RegistrarViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_registrar, container, false);
-        final TextView textView = root.findViewById(R.id.text_registrar);
-        RegistrarFragment.getText().observe(this, new Observer<String>() {
+        CorosAdoFragment =
+                ViewModelProviders.of(this).get(CorosAdoViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_coros_ado, container, false);
+        final TextView textView = root.findViewById(R.id.text_corosAdo);
+        CorosAdoFragment.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
