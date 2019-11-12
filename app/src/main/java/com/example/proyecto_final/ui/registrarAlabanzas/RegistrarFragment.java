@@ -1,4 +1,4 @@
-package com.example.proyecto_final.ui.registrar;
+package com.example.proyecto_final.ui.registrarAlabanzas;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

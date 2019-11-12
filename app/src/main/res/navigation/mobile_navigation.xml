@@ -19,9 +19,15 @@
     <!--Esta es la opción de registrar-->
     <fragment
         android:id="@+id/nav_registrar"
-        android:name="com.example.proyecto_final.ui.registrar.RegistrarFragment"
+        android:name="com.example.proyecto_final.ui.registrarAlabanzas.RegistrarFragment"
         android:label="@string/menu_registrar"
         tools:layout="@layout/fragment_registrar" />
+
+    <fragment
+        android:id="@+id/nav_registrarCoros"
+        android:name="com.example.proyecto_final.ui.registrarCorosAle.RegistrarCorosFragment"
+        android:label="@string/menu_registrarCoros"
+        tools:layout="@layout/fragment_registrar_coros" />
 
     <!--Esta es la opción de coros-->
     <fragment
@@ -29,6 +35,18 @@
         android:name="com.example.proyecto_final.ui.coros.CorosFragment"
         android:label="@string/menu_coros"
         tools:layout="@layout/fragment_coros" />
+
+    <fragment
+        android:id="@+id/nav_corosAdo"
+        android:name="com.example.proyecto_final.ui.corosAdo.CorosAdoFragment"
+        android:label="@string/menu_corosAdo"
+        tools:layout="@layout/fragment_coros_ado" />
+
+    <fragment
+        android:id="@+id/nav_registrarCorosAdo"
+        android:name="com.example.proyecto_final.ui.registrarCorosAdo.RegistrarCorosAdoFragment"
+        android:label="@string/menu_registrarCorosAdo"
+        tools:layout="@layout/fragment_registrar_coros_ado" />
 
     <!--Esta es la opción de alabanzas-->
     <fragment
