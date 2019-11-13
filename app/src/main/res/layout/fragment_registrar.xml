@@ -1,14 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ECEFF1">
+
+
     <TextView
         android:id="@+id/text_registrar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
         android:textAlignment="center"
-        android:textSize="20sp" />
+        android:textSize="25sp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_margin="20dp"
+        android:padding="15dp"
+        android:layout_height="wrap_content"
+        android:background="#FFF"
+        >
+
+    <EditText
+        android:id="@+id/etNAutor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre del autor"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        />
+
+    <EditText
+        android:id="@+id/etNAlabanza"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre de la alabanza"
+        android:layout_marginTop="30dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        />
+
+    <EditText
+        android:id="@+id/etLetra"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:hint="Letra de la alabanza"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/etestilo"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        />
+
+    <Button
+        android:id="@+id/btnGuardar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Guardar"
+        android:background="@color/colorPrimary"
+        android:textColor="#FFF"
+        android:layout_marginTop="30dp"
+        />
+
+    </LinearLayout>
 </LinearLayout>
