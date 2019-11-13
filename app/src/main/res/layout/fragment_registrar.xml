@@ -11,6 +11,7 @@
         android:id="@+id/text_registrar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:textAlignment="center"
         android:textSize="25sp" />
     <LinearLayout
@@ -64,4 +65,54 @@
         />
 
     </LinearLayout>
+=======
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Registro de Alabanzas"
+        android:textAlignment="center"
+        android:textSize="30dp" />
+
+
+    <EditText
+        android:id="@+id/et_nAlabanza"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:hint="Nombre Alabanza:"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        />
+
+    <EditText
+        android:id="@+id/et_nAutorA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="Nombre Autor:"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        />
+
+    <Spinner
+        android:id="@+id/Sp_Alabanza"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        />
+
+    <EditText
+        android:id="@+id/et_L_Alabanza"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_marginTop="20dp"
+        android:hint="Letra"
+        android:textAlignment="center"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="#FCF2F2"
+        />
+>>>>>>> 4663fc700c56e063993e951cb5f12864f761c98a
 </LinearLayout>
