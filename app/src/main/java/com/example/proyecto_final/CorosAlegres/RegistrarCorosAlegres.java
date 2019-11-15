@@ -17,8 +17,7 @@ import com.example.proyecto_final.R;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class RegistrarCorosAlegres_Class extends AppCompatActivity implements View.OnClickListener {
-    //Se declaran las variales que se vas a usar
+public class RegistrarCorosAlegres extends AppCompatActivity implements View.OnClickListener {
     EditText etnombre, etautor, etletra;
     Button btnR;
 
@@ -54,12 +53,12 @@ public class RegistrarCorosAlegres_Class extends AppCompatActivity implements Vi
                         boolean success = jsonResponse.getBoolean("success");
 
                         if (success ){
-                            Toast.makeText(RegistrarCorosAlegres_Class.this, "Registro realizado exitosamente", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(RegistrarCorosAlegres.this, "Registro realizado exitosamente", Toast.LENGTH_SHORT).show();
                             etnombre.setText(null);
                             etautor.setText(null);
                             etletra.setText(null);
                         }else {
-                            AlertDialog.Builder builder = new AlertDialog.Builder(RegistrarCorosAlegres_Class.this);
+                            AlertDialog.Builder builder = new AlertDialog.Builder(RegistrarCorosAlegres.this);
                             builder.setMessage("Error al registrar")
                                     .setNegativeButton("Retry", null)
                                     .create().show();
@@ -70,7 +69,7 @@ public class RegistrarCorosAlegres_Class extends AppCompatActivity implements Vi
                 }
             };
             RegisterRequestCoroAle registrarRequestCoro = new RegisterRequestCoroAle(titulo, autor, letra, responseListener);
-            RequestQueue queue = Volley.newRequestQueue(RegistrarCorosAlegres_Class.this);
+            RequestQueue queue = Volley.newRequestQueue(RegistrarCorosAlegres.this);
             queue.add(registrarRequestCoro);
         }
     }

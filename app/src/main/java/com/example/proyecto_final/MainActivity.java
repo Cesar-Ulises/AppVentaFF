@@ -9,7 +9,7 @@ import android.view.MenuItem;
 
 import com.example.proyecto_final.Alabanzas.RegistrarAlabanzas;
 import com.example.proyecto_final.CorosAdoracion.RegistrarCorosAdoracion;
-import com.example.proyecto_final.CorosAlegres.RegistrarCorosAlegres_Class;
+import com.example.proyecto_final.CorosAlegres.RegistrarCorosAlegres;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }if (id == R.id.mRegCoAlegres) {
             //Intent sirve para lanzar otra actividad
-            Intent intent = new Intent(this, RegistrarCorosAlegres_Class.class);
+            Intent intent = new Intent(this, RegistrarCorosAlegres.class);
             startActivity(intent);
             //se retorna true porque el metodo espera un valor booleano
             return true;

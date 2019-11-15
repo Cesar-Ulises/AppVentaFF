@@ -9,5 +9,5 @@
         android:title="Registrar Coros Alegres" />
     <item
         android:id="@+id/mRegCoAdora"
-        android:title="Registrar Coros de Adorración" />
+        android:title="Registrar Coros de Adoración" />
 </menu>

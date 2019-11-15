@@ -20,7 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".CorosAdoracion.RegistrarCorosAdoracion" />
-        <activity android:name=".CorosAlegres.RegistrarCorosAlegres_Class" />
+        <activity android:name=".CorosAlegres.RegistrarCorosAlegres" />
         <activity android:name=".Alabanzas.RegistrarAlabanzas" />
         <activity android:name=".MainActivity">
 
