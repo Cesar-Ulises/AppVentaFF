@@ -38,6 +38,43 @@ public class RegistrarCorosAdoracion extends AppCompatActivity implements View.O
 
     @Override
     public void onClick(View v) {
+        final String titulo = etnombre.getText().toString();
+        final String autor = etautor.getText().toString();
+        final String letra = etletra.getText().toString();
 
+        if (etnombre.getText().toString().length() == 0){
+            etnombre.setError("Campo Obligatorio");
+        }else if (etautor.getText().toString().length() == 0){
+            etautor.setError("Campo Obligatorio");
+        }else if (etletra.getText().toString().length() == 0){
+            etletra.setError("Campo Obligatorio");
+        }else {
+            Response.Listener<String> responseListener = new Response.Listener<String>() {
+                @Override
+                public void onResponse(String response) {
+                    try {
+                        JSONObject jsonResponse = new JSONObject(response);
+                        boolean success = jsonResponse.getBoolean("success");
+
+                        if (success ){
+                            Toast.makeText(RegistrarCorosAdoracion.this, "Registro realizado exitosamente", Toast.LENGTH_SHORT).show();
+                            etnombre.setText(null);
+                            etautor.setText(null);
+                            etletra.setText(null);
+                        }else {
+                            AlertDialog.Builder builder = new AlertDialog.Builder(RegistrarCorosAdoracion.this);
+                            builder.setMessage("Error al registrar")
+                                    .setNegativeButton("Retry", null)
+                                    .create().show();
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            };
+            RegisterRequestCoroAdo registrarRequestCoro = new RegisterRequestCoroAdo(titulo, autor, letra, responseListener);
+            RequestQueue queue = Volley.newRequestQueue(RegistrarCorosAdoracion.this);
+            queue.add(registrarRequestCoro);
+        }
     }
 }
