@@ -17,6 +17,7 @@ public class SplashScreen extends AppCompatActivity {
     ImageView bgapp, clover;
     LinearLayout textsplash, texthome, menus, textDesar;
     Animation frombottom;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
