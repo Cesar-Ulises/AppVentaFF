@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/mRegAlabanzas"
+        android:title="Registrar Alabanzas" />
+    <item
+        android:id="@+id/mRegCoAlegres"
+        android:title="Registrar Coros Alegres" />
+    <item
+        android:id="@+id/mRegCoAdora"
+        android:title="Registrar Coros de Adorración" />
+</menu>

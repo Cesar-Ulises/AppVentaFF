@@ -1,22 +1,3 @@
 <resources>
-    <string name="app_name">Proyecto Final</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Proyecto Final</string>
-    <string name="nav_header_subtitle">MYSQL ~ JAVA</string>
-    <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
-
-    <string name="menu_inicio">inicio</string>
-    <string name="menu_registrar">Registrar Alabanzas</string>
-    <string name="menu_registrarCoros">Registrar Coros Alegres</string>
-    <string name="menu_registrarCorosAdo">Registrar Coros de Adoración</string>
-    <string name="menu_send">Send</string>
-    <string name="menu_coros">Coros Alegres</string>
-    <string name="menu_corosAdo">Coros de Adoración</string>
-    <string name="menu_alabanzas">Alabanzas</string>
-    <string name="menu_contactanos">Contactanos</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="app_name">1Proyect</string>
 </resources>
