@@ -43,7 +43,7 @@ public class registro_alabanzas extends AppCompatActivity {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                 if (statusCode == 200){
-                   // listarAlabanzas(new String(responseBody));
+                   listarAlabanzas(new String(responseBody));
                 }
             }
 
