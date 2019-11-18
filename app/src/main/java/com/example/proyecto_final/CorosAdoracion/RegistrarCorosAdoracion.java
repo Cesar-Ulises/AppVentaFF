@@ -15,9 +15,12 @@ import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
 import com.example.proyecto_final.R;
 import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.AsyncHttpResponseHandler;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import cz.msebera.android.httpclient.Header;
 
 public class RegistrarCorosAdoracion extends AppCompatActivity {
 
@@ -58,9 +61,30 @@ public class RegistrarCorosAdoracion extends AppCompatActivity {
                     a.setAutor(etautorca.getText().toString().replaceAll(" ", "%20"));
                     a.setLetra(etletraca.getText().toString().replaceAll(" ", "%20"));
 
-                    //agregarCoros(a);
+                    agregarCoros(a);
 
                 }
+            }
+        });
+    }
+
+    private  void agregarCoros(CorosAdo a){
+        String url = "https://appmovilgamez.000webhostapp.com/agregarca.php?";
+        String parametros = "titulo="+a.getTitulo()+"&autor="+a.getAutor()+"&letra="+a.getLetra();
+        clienteca.post(url + parametros, new AsyncHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                if (statusCode == 200){
+                    Toast.makeText(RegistrarCorosAdoracion.this, "Coro agregada correctamente", Toast.LENGTH_SHORT).show();
+                    ettituloca.setText("");
+                    etautorca.setText("");
+                    etletraca.setText("");
+                }
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+
             }
         });
     }
