@@ -4,6 +4,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.content.Intent;
@@ -11,6 +12,8 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -37,6 +40,7 @@ public class registro_coro_ado extends AppCompatActivity {
     private AsyncHttpClient clientea = new AsyncHttpClient();
     private EditText buscar;
     private ProgressDialog progressDialog;
+
 
 
     AlertDialog.Builder dialogo;
@@ -76,6 +80,9 @@ public class registro_coro_ado extends AppCompatActivity {
 
         obtenerCoros();
     }
+
+
+
 
 
     private void obtenerCoros(){

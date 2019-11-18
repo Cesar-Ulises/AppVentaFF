@@ -4,6 +4,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
@@ -17,6 +18,7 @@ import com.example.proyecto_final.CorosAdoracion.RegistrarCorosAdoracion;
 import com.example.proyecto_final.CorosAlegres.RegistrarCorosAlegres;
 
 public class MainActivity extends AppCompatActivity {
+    final Context context = this;
 
 
     AlertDialog.Builder dialogo;
@@ -77,6 +79,30 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             //se retorna true porque el metodo espera un valor booleano
             return true;
+        }
+        //Acerca de..
+        if (id == R.id.mAcerca) {
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                    context);
+            // Establecer el título
+            alertDialogBuilder.setTitle("Desarrollado por: ");
+            // Establecer mensaje de diálogo
+            alertDialogBuilder
+                    .setMessage("- César Alvarenga \n" +
+                            "\n - Alberto Castro \n" +
+                            "\n - Flor Alvarez \n" +
+                            "\n - Oscar Cortez \n")
+                    .setCancelable(false)
+                    .setNegativeButton("Aceptar", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            // Si presiona que Aceptar se cerrara el mensaje de dialogo
+                            dialog.cancel();
+                        }
+                    });
+            // Crear mensaje AlertDialog
+            AlertDialog alertDialog = alertDialogBuilder.create();
+            // Mostrar alert
+            alertDialog.show();
         }
         return super.onOptionsItemSelected(item);
     }
