@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.proyecto_final">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -11,10 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CorosAdoracion.RegistrarCorosAdoracion"></activity>
+        <activity android:name=".Alabanzas.registro_alabanzas"></activity>
+        <activity android:name=".CorosAdoracion.RegistrarCorosAdoracion" />
         <activity android:name=".CorosAlegres.RegistrarCorosAlegres" />
         <activity android:name=".Alabanzas.RegistrarAlabanzas" />
-        <activity android:name=".SplashScreen.SplashScreen"
+        <activity
+            android:name=".SplashScreen.SplashScreen"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,7 +24,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

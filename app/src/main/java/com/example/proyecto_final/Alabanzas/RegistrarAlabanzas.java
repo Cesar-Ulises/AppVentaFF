@@ -41,7 +41,7 @@ public class RegistrarAlabanzas extends AppCompatActivity {
 
         cliente = new AsyncHttpClient();
 
-
+        almacenarAlabanzas();
     }
 
     private void almacenarAlabanzas() {
