@@ -8,11 +8,19 @@
     android:orientation="vertical"
     android:layout_margin="15dp">
 
+    <EditText
+        android:id="@+id/buscar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/etestilo"
+        android:drawableLeft="@drawable/ic_search"
+        android:hint="Buscar" />
+
     <ListView
         android:id="@+id/lvDatosR"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="15dp"
-        android:dividerHeight="5dp" />
+        android:dividerHeight="15dp" />
 
 </LinearLayout>

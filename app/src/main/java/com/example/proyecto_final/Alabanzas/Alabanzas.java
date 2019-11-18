@@ -50,7 +50,7 @@ public class Alabanzas {
 
     @Override
     public String toString() {
-        return id +  " ~ " + titulo;
+        return  titulo;
     }
 
     public  String tostring(){
