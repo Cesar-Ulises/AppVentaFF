@@ -3,11 +3,13 @@ package com.example.proyecto_final.CorosAlegres;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -34,6 +36,33 @@ public class registro_coro_alegre extends AppCompatActivity {
     private ListView lvdatoscal;
     private AsyncHttpClient clientecal = new AsyncHttpClient();
     private EditText buscar;
+
+
+    AlertDialog.Builder dialogo;
+
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            new android.app.AlertDialog.Builder(this)
+                    .setIcon(R.drawable.warning)
+                    .setTitle("Warning")
+                    .setIcon(R.drawable.warning)
+                    .setMessage("¿Realmente desea salir?")
+                    .setNegativeButton(android.R.string.cancel, null)
+                    .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {//un listener que al pulsar, cierre la aplicacion
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            finish();
+                        }
+                    })
+                    .show();
+            return true;
+        }
+        //para las demas cosas, se reenvia el evento al listener habitual
+        return super.onKeyDown(keyCode, event);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
