@@ -17,9 +17,12 @@ import com.android.volley.toolbox.Volley;
 import com.example.proyecto_final.CorosAdoracion.RegistrarCorosAdoracion;
 import com.example.proyecto_final.R;
 import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.AsyncHttpResponseHandler;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import cz.msebera.android.httpclient.Header;
 
 public class RegistrarCorosAlegres extends AppCompatActivity {
     private EditText ettitulocal, etautorcal, etletracal;
@@ -59,9 +62,31 @@ public class RegistrarCorosAlegres extends AppCompatActivity {
                     a.setAutor(etautorcal.getText().toString().replaceAll(" ", "%20"));
                     a.setLetra(etletracal.getText().toString().replaceAll(" ", "%20"));
 
-                    //agregarCoros(a);
+                    agregarCoros(a);
 
                 }
+            }
+        });
+    }
+
+
+    private  void agregarCoros(CorosAle a){
+        String url = "https://appmovilgamez.000webhostapp.com/agregarale.php?";
+        String parametros = "titulo="+a.getTitulo()+"&autor="+a.getAutor()+"&letra="+a.getLetra();
+        clientecal.post(url + parametros, new AsyncHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                if (statusCode == 200){
+                    Toast.makeText(RegistrarCorosAlegres.this, "Coro agregada correctamente", Toast.LENGTH_SHORT).show();
+                    ettitulocal.setText("");
+                    etautorcal.setText("");
+                    etletracal.setText("");
+                }
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+
             }
         });
     }
