@@ -1,6 +1,8 @@
 package com.example.proyecto_final.Alabanzas;
 
-public class Alabanzas {
+import java.io.Serializable;
+
+public class Alabanzas implements Serializable {
     private int id;
     private String titulo;
     private String autor;
@@ -50,12 +52,11 @@ public class Alabanzas {
 
     @Override
     public String toString() {
-        return  titulo;
+        return id +  " ~ " + titulo;
     }
 
     public  String tostring(){
-        return  "ID: " + id + "\n"+
-                "TÍTULO: " + titulo + "\n"+
+        return "TÍTULO: " + titulo + "\n"+
                 "AUTOR: " + autor + "\n\n"+
                 "LETRA: " +  "\n" + letra ;
     }

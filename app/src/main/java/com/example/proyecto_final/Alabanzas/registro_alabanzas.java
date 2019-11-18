@@ -3,6 +3,7 @@ package com.example.proyecto_final.Alabanzas;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -19,6 +20,7 @@ import com.loopj.android.http.AsyncHttpResponseHandler;
 
 import org.json.JSONArray;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import cz.msebera.android.httpclient.Header;
@@ -132,19 +134,12 @@ public class registro_alabanzas extends AppCompatActivity {
             lvdatos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Alabanzas a = lista.get(position);
-                    StringBuffer b = new StringBuffer();
-                    b.append("ID: " + a.getId() + "\n");
-                    b.append("TITULO: " + a.getTitulo() + "\n");
-                    b.append("AUTOR: " + a.getTitulo() + "\n");
-                    b.append("LETRA: " + a.getLetra() + "\n");
+                    Alabanzas a = (Alabanzas) parent.getItemAtPosition(position);
 
-                    AlertDialog.Builder al = new AlertDialog.Builder(registro_alabanzas.this);
-                    al.setCancelable(true);
-                    al.setTitle("Detalle");
-                    al.setMessage(a.tostring());
-                    //al.setIcon(R.drawable.xx);
-                    al.show();
+                    Intent  intent = new Intent(getApplicationContext(), Detalle.class);
+                    intent.putExtra("objeto", (Serializable) a);
+                    startActivity(intent);
+
                 }
             });
         }catch(Exception el){
