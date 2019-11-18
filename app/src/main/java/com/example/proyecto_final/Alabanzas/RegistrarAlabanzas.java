@@ -62,12 +62,6 @@ public class RegistrarAlabanzas extends AppCompatActivity {
                     a.setLetra(etletra.getText().toString().replaceAll(" ", "%20"));
 
                     agregarAlabanza(a);
-                    try {
-                        Thread.sleep(1000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                    //obtenerAlabanzas();
                 }
             }
         });
