@@ -79,6 +79,7 @@ public class registro_alabanzas extends AppCompatActivity {
 
     private void obtenerAlabanzas(){
         progressDialog.setMessage("Cargando datos");
+        progressDialog.setCancelable(false);
 //muestras el ProgressDialog
         progressDialog.show();
         String url = "https://appmovilgamez.000webhostapp.com/obtenerDatos.php";

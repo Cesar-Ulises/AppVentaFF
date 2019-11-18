@@ -79,6 +79,7 @@ public class registro_coro_alegre extends AppCompatActivity {
 
     private void obtenerCoros(){
         progressDialog.setMessage("Cargando datos");
+        progressDialog.setCancelable(false);
 //muestras el ProgressDialog
         progressDialog.show();
         String url = "https://appmovilgamez.000webhostapp.com/obtenerCoroAle.php";
