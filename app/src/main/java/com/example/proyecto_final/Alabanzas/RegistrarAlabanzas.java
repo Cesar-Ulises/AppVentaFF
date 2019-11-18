@@ -3,6 +3,7 @@ package com.example.proyecto_final.Alabanzas;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -94,5 +95,10 @@ public class RegistrarAlabanzas extends AppCompatActivity {
 
             }
         });
+    }
+
+    public void verlista(View view) {
+        Intent intent = new Intent(this, registro_alabanzas.class);
+        startActivity(intent);
     }
 }
