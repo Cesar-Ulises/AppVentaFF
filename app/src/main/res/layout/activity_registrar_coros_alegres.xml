@@ -33,34 +33,34 @@
                 android:background="#FFF"
                 >
                 <EditText
-                    android:id="@+id/etNombreCoroAle"
+                    android:id="@+id/ettituloal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Nombre del autor"
+                    android:hint="Título del Coro"
                     android:paddingLeft="5dp"
                     android:paddingRight="5dp"
                     />
                 <EditText
-                    android:id="@+id/etAutorCoroAle"
+                    android:id="@+id/etautoral"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Nombre de la alabanza"
+                    android:hint="Nombre del autor"
                     android:layout_marginTop="30dp"
                     android:paddingLeft="5dp"
                     android:paddingRight="5dp"
                     />
                 <EditText
-                    android:id="@+id/etLetraCoroAle"
+                    android:id="@+id/etletraal"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:hint="Letra de la alabanza"
+                    android:hint="Letra del coro"
                     android:layout_marginTop="30dp"
                     android:background="@drawable/etestilo"
                     android:paddingLeft="5dp"
                     android:paddingRight="5dp"
                     />
                 <Button
-                    android:id="@+id/btnGuardarCoroAle"
+                    android:id="@+id/btnRegistraral"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Guardar"
