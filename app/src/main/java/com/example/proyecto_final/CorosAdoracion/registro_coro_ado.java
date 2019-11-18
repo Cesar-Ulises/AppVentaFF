@@ -3,6 +3,7 @@ package com.example.proyecto_final.CorosAdoracion;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.content.Intent;
@@ -35,6 +36,7 @@ public class registro_coro_ado extends AppCompatActivity {
     private ListView lvdatosa;
     private AsyncHttpClient clientea = new AsyncHttpClient();
     private EditText buscar;
+    private ProgressDialog progressDialog;
 
 
     AlertDialog.Builder dialogo;
@@ -70,12 +72,16 @@ public class registro_coro_ado extends AppCompatActivity {
         lvdatosa = findViewById(R.id.lvDatosRCADO);
 
         clientea = new AsyncHttpClient();
+        progressDialog= new ProgressDialog(this);
 
         obtenerCoros();
     }
 
 
     private void obtenerCoros(){
+        progressDialog.setMessage("Cargando datos");
+//muestras el ProgressDialog
+        progressDialog.show();
         String url = "https://appmovilgamez.000webhostapp.com/obtenerCoroA.php";
         clientea.post(url, new AsyncHttpResponseHandler() {
             @Override
@@ -110,6 +116,8 @@ public class registro_coro_ado extends AppCompatActivity {
 
             final ArrayAdapter<CorosAdo> a = new ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, listar);
             lvdatosa.setAdapter(a);
+            progressDialog.dismiss();
+
             buscar.addTextChangedListener(new TextWatcher() {
                 @Override
                 public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -173,5 +181,12 @@ public class registro_coro_ado extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    public void actu(View view) {
+        finish();
+        overridePendingTransition(0, 0);
+        startActivity(getIntent());
+        overridePendingTransition(0, 0);
     }
 }

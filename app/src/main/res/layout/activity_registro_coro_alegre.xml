@@ -15,12 +15,19 @@
         android:background="@drawable/etestilo"
         android:drawableLeft="@drawable/ic_search"
         android:hint="Buscar" />
+    <Button
+        android:id="@+id/brnrefresCa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Refrescar"
+        android:onClick="actu"
+        />
 
     <ListView
         android:id="@+id/lvDatosale"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="10dp"
-        />
+        android:dividerHeight="8dp" />
 
 </LinearLayout>

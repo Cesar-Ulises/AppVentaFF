@@ -3,6 +3,7 @@ package com.example.proyecto_final.Alabanzas;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -32,6 +33,7 @@ public class registro_alabanzas extends AppCompatActivity {
     private ListView lvdatos;
     private AsyncHttpClient cliente = new AsyncHttpClient();
     private EditText buscar;
+    private ProgressDialog progressDialog;
 
 
     AlertDialog.Builder dialogo;
@@ -70,10 +72,15 @@ public class registro_alabanzas extends AppCompatActivity {
 
         buscar = findViewById(R.id.buscar);
 
+        progressDialog= new ProgressDialog(this);
+
         obtenerAlabanzas();
     }
 
     private void obtenerAlabanzas(){
+        progressDialog.setMessage("Cargando datos");
+//muestras el ProgressDialog
+        progressDialog.show();
         String url = "https://appmovilgamez.000webhostapp.com/obtenerDatos.php";
         cliente.post(url, new AsyncHttpResponseHandler() {
             @Override
@@ -103,11 +110,13 @@ public class registro_alabanzas extends AppCompatActivity {
                 a.setLetra(jsonArreglo.getJSONObject(i).getString("letra"));
 
                 lista.add(a);
-
             }
 
             final ArrayAdapter<Alabanzas> a = new ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, lista);
             lvdatos.setAdapter(a);
+
+            //cierra el progressbar
+            progressDialog.dismiss();
 
 
             buscar.addTextChangedListener(new TextWatcher() {
@@ -176,4 +185,11 @@ public class registro_alabanzas extends AppCompatActivity {
 
 
     }
+
+ public void actu(View view) {
+ finish();
+ overridePendingTransition(0, 0);
+ startActivity(getIntent());
+ overridePendingTransition(0, 0);
+ }
 }
