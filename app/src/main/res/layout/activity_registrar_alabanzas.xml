@@ -35,7 +35,7 @@
                     android:id="@+id/ettitulo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Nombre del autor"
+                    android:hint="Título de la alabanza"
                     android:paddingLeft="5dp"
                     android:paddingRight="5dp"
                     />
@@ -43,7 +43,7 @@
                     android:id="@+id/etautor"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Nombre de la alabanza"
+                    android:hint="Nombre del autor"
                     android:layout_marginTop="30dp"
                     android:paddingLeft="5dp"
                     android:paddingRight="5dp"

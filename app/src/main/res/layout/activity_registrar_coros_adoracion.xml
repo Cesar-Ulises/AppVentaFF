@@ -33,34 +33,34 @@
                 android:background="#FFF"
                 >
                 <EditText
-                    android:id="@+id/etNombreCoroAdo"
+                    android:id="@+id/ettituloca"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Nombre del autor"
+                    android:hint="Título de la coro"
                     android:paddingLeft="5dp"
                     android:paddingRight="5dp"
                     />
                 <EditText
-                    android:id="@+id/etAutorCoroAdo"
+                    android:id="@+id/etautorca"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Nombre de la alabanza"
+                    android:hint="Nombre del autor"
                     android:layout_marginTop="30dp"
                     android:paddingLeft="5dp"
                     android:paddingRight="5dp"
                     />
                 <EditText
-                    android:id="@+id/etLetraCoroAdo"
+                    android:id="@+id/etletraca"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:hint="Letra de la alabanza"
+                    android:hint="Letra de coro"
                     android:layout_marginTop="30dp"
                     android:background="@drawable/etestilo"
                     android:paddingLeft="5dp"
                     android:paddingRight="5dp"
                     />
                 <Button
-                    android:id="@+id/btnGuardarCoroAdo"
+                    android:id="@+id/btnRegistrarca"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Guardar"
