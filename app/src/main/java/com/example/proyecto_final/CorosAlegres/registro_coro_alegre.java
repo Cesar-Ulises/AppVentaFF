@@ -58,6 +58,84 @@ public class registro_coro_alegre extends AppCompatActivity {
             }
         });
     }
+    private  void listarCoros(String respuesta){
+        final ArrayList<CorosAle> listar = new ArrayList<CorosAle>();
+        try{
+            JSONArray jsonArreglo = new JSONArray(respuesta);
+            for (int i=0; i<jsonArreglo.length(); i++){
+                CorosAle a = new CorosAle();
+                a.setId(jsonArreglo.getJSONObject(i).getInt("id_cale"));
+                a.setTitulo(jsonArreglo.getJSONObject(i).getString("titulo"));
+                a.setAutor(jsonArreglo.getJSONObject(i).getString("autor"));
+                a.setLetra(jsonArreglo.getJSONObject(i).getString("letra"));
 
+                listar.add(a);
+
+            }
+
+            final ArrayAdapter<CorosAle> a = new ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, listar);
+            lvdatoscal.setAdapter(a);
+
+            buscar.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                }
+
+                @Override
+                public void onTextChanged(CharSequence s, int start, int before, int count) {
+                    a.getFilter().filter(s);
+                }
+
+                @Override
+                public void afterTextChanged(Editable s) {
+
+                }
+            });
+
+            lvdatoscal.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+                @Override
+                public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+
+                    CorosAle a = listar.get(position);
+                    String url = "https://appmovilgamez.000webhostapp.com/eliminarale.php?id_cale="+a.getId();
+
+                    clientecal.post(url, new AsyncHttpResponseHandler() {
+                        @Override
+                        public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                            if (statusCode == 200){
+                                Toast.makeText(registro_coro_alegre.this, "Coro liminado Correctamente", Toast.LENGTH_SHORT).show();
+                                try {
+                                    Thread.sleep(2000);
+                                } catch (InterruptedException e) {
+                                    e.printStackTrace();
+                                }
+                                obtenerCoros();
+                            }
+                        }
+
+                        @Override
+                        public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+
+                        }
+                    });
+
+                    return true;
+                }
+            });
+
+
+            lvdatoscal.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                }
+            });
+        }catch(Exception el){
+            el.printStackTrace();
+        }
+
+
+    }
 
 }
