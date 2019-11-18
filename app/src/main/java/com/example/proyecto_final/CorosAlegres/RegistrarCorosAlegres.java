@@ -77,7 +77,7 @@ public class RegistrarCorosAlegres extends AppCompatActivity {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                 if (statusCode == 200){
-                    Toast.makeText(RegistrarCorosAlegres.this, "Coro agregada correctamente", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegistrarCorosAlegres.this, "Coro agregado correctamente", Toast.LENGTH_SHORT).show();
                     ettitulocal.setText("");
                     etautorcal.setText("");
                     etletracal.setText("");
