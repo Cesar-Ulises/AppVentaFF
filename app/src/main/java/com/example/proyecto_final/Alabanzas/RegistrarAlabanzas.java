@@ -30,6 +30,14 @@ public class RegistrarAlabanzas extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrar_alabanzas);
 
+        ettitulo = findViewById(R.id.ettitulo);
+        etautor = findViewById(R.id.etautor);
+        etletra = findViewById(R.id.etletra);
+
+        btnRegistrar = findViewById(R.id.btnRegistrar);
+
+        cliente = new AsyncHttpClient();
+
 
     }
 
