@@ -17,6 +17,8 @@ import android.widget.Toast;
 
 import com.example.proyecto_final.Alabanzas.Alabanzas;
 import com.example.proyecto_final.Alabanzas.Detalle;
+import com.example.proyecto_final.CorosAdoracion.CorosAdo;
+import com.example.proyecto_final.CorosAdoracion.DetalleCoroAdo;
 import com.example.proyecto_final.R;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
@@ -128,7 +130,10 @@ public class registro_coro_alegre extends AppCompatActivity {
             lvdatoscal.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+                    CorosAle ca = (CorosAle) parent.getItemAtPosition(position);
+                    Intent  intent = new Intent(getApplicationContext(), DetalleCoroAle.class);
+                    intent.putExtra("objeto", (Serializable) ca);
+                    startActivity(intent);
                 }
             });
         }catch(Exception el){

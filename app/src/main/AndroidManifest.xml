@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CorosAlegres.registro_coro_alegre"></activity>
+        <activity android:name=".CorosAlegres.DetalleCoroAle"></activity>
+        <activity android:name=".CorosAlegres.registro_coro_alegre" />
         <activity android:name=".CorosAdoracion.DetalleCoroAdo" />
         <activity android:name=".CorosAdoracion.registro_coro_ado" />
         <activity android:name=".Alabanzas.Detalle" />
