@@ -1,5 +1,6 @@
 package com.example.proyecto_final.CorosAdoracion;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -50,7 +51,7 @@ public class registro_coro_ado extends AppCompatActivity {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                 if (statusCode == 200){
-                   //listarCoros(new String(responseBody));
+                   listarCoros(new String(responseBody));
                 }
             }
 
@@ -59,5 +60,32 @@ public class registro_coro_ado extends AppCompatActivity {
 
             }
         });
+    }
+
+
+    private  void listarCoros(String respuesta){
+        final ArrayList<CorosAdo> listar = new ArrayList<CorosAdo>();
+        try{
+            JSONArray jsonArreglo = new JSONArray(respuesta);
+            for (int i=0; i<jsonArreglo.length(); i++){
+                CorosAdo a = new CorosAdo();
+                a.setId(jsonArreglo.getJSONObject(i).getInt("id_ca"));
+                a.setTitulo(jsonArreglo.getJSONObject(i).getString("titulo"));
+                a.setAutor(jsonArreglo.getJSONObject(i).getString("autor"));
+                a.setLetra(jsonArreglo.getJSONObject(i).getString("letra"));
+
+                listar.add(a);
+
+            }
+
+            ArrayAdapter<CorosAdo> a = new ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, listar);
+            lvdatosa.setAdapter(a);
+
+
+        }catch(Exception el){
+            el.printStackTrace();
+        }
+
+
     }
 }
