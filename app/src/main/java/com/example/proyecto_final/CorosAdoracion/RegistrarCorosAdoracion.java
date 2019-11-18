@@ -3,6 +3,7 @@ package com.example.proyecto_final.CorosAdoracion;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -89,4 +90,8 @@ public class RegistrarCorosAdoracion extends AppCompatActivity {
         });
     }
 
+    public void verCado(View view) {
+        Intent intent = new Intent(this, registro_coro_ado.class);
+        startActivity(intent);
+    }
 }

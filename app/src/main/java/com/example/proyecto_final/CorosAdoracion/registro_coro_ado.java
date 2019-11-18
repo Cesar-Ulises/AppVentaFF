@@ -124,8 +124,7 @@ public class registro_coro_ado extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 CorosAdo c = (CorosAdo) parent.getItemAtPosition(position);
-
-                Intent  intent = new Intent(getApplicationContext(), Detalle.class);
+                Intent  intent = new Intent(getApplicationContext(), DetalleCoroAdo.class);
                 intent.putExtra("objeto", (Serializable) c);
                 startActivity(intent);
             }

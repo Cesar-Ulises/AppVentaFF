@@ -1,6 +1,8 @@
 package com.example.proyecto_final.CorosAdoracion;
 
-public class CorosAdo {
+import java.io.Serializable;
+
+public class CorosAdo implements Serializable {
     private int id;
     private String titulo;
     private String autor;
