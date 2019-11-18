@@ -37,6 +37,32 @@ public class RegistrarCorosAdoracion extends AppCompatActivity {
         btnRegistrarca = findViewById(R.id.btnRegistrarca);
 
         clienteca = new AsyncHttpClient();
+
+        almacenarCoros();
+    }
+
+
+    private void almacenarCoros() {
+        btnRegistrarca.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (ettituloca.getText().toString().length()== 0 )  {
+                    ettituloca.setError("Campo Obligatorio");
+                }else if (etautorca.getText().toString().length()== 0){
+                    etautorca.setError("Campo Obligatorio");
+                }else  if (etletraca.getText().toString().length()== 0){
+                    etletraca.setError("Campo Obligatorio");
+                }else{
+                    CorosAdo a = new CorosAdo();
+                    a.setTitulo(ettituloca.getText().toString().replaceAll(" ", "%20"));
+                    a.setAutor(etautorca.getText().toString().replaceAll(" ", "%20"));
+                    a.setLetra(etletraca.getText().toString().replaceAll(" ", "%20"));
+
+                    //agregarCoros(a);
+
+                }
+            }
+        });
     }
 
 }
