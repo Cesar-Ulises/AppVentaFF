@@ -86,6 +86,43 @@ public class registro_coro_ado extends AppCompatActivity {
             el.printStackTrace();
         }
 
+        lvdatosa.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
 
+                CorosAdo a = listar.get(position);
+                String url = "https://appmovilgamez.000webhostapp.com/eliminarca.php?id_ca="+a.getId();
+
+                clientea.post(url, new AsyncHttpResponseHandler() {
+                    @Override
+                    public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                        if (statusCode == 200){
+                            Toast.makeText(registro_coro_ado.this, "Coro liminado Correctamente", Toast.LENGTH_SHORT).show();
+                            try {
+                                Thread.sleep(2000);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                            obtenerCoros();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+
+                    }
+                });
+
+                return true;
+            }
+        });
+
+
+        lvdatosa.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+            }
+        });
     }
 }
