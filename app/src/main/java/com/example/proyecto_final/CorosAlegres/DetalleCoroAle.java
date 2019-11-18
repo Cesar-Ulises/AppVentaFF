@@ -21,7 +21,7 @@ public class DetalleCoroAle extends AppCompatActivity {
         tv_autor = findViewById(R.id.tv_autorCale);
         tv_letra = findViewById(R.id.tv_alaCale);
 
-        CorosAdo a = (CorosAdo) getIntent().getExtras().getSerializable("objeto");
+        CorosAle a = (CorosAle) getIntent().getExtras().getSerializable("objeto");
 
         tv_id.setText(a.getId()+"");
         tv_titulo.setText(a.getTitulo());

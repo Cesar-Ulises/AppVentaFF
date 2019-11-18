@@ -3,8 +3,10 @@ package com.example.proyecto_final.Alabanzas;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -29,6 +31,31 @@ public class RegistrarAlabanzas extends AppCompatActivity {
     private ListView lvdatos;
     private AsyncHttpClient cliente = new AsyncHttpClient();
 
+
+    AlertDialog.Builder dialogo;
+
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            new android.app.AlertDialog.Builder(this)
+                    .setIcon(R.drawable.warning)
+                    .setTitle("Warning")
+                    .setIcon(R.drawable.warning)
+                    .setMessage("¿Realmente desea salir?")
+                    .setNegativeButton(android.R.string.cancel, null)
+                    .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {//un listener que al pulsar, cierre la aplicacion
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            finish();
+                        }
+                    })
+                    .show();
+            return true;
+        }
+        //para las demas cosas, se reenvia el evento al listener habitual
+        return super.onKeyDown(keyCode, event);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

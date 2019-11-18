@@ -42,6 +42,8 @@ public class registro_coro_alegre extends AppCompatActivity {
         lvdatoscal = findViewById(R.id.lvDatosale);
         clientecal = new AsyncHttpClient();
         buscar = findViewById(R.id.buscarca);
+
+        obtenerCoros();
     }
 
     private void obtenerCoros(){
@@ -50,7 +52,7 @@ public class registro_coro_alegre extends AppCompatActivity {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                 if (statusCode == 200){
-                    //listarCoros(new String(responseBody));
+                    listarCoros(new String(responseBody));
                 }
             }
 
