@@ -21,6 +21,8 @@
         android:layout_height="wrap_content"
         android:text="Refrescar"
         android:onClick="actu"
+        android:background="@color/colorPrimary"
+        android:textColor="#FFF"
         />
 
     <ListView
