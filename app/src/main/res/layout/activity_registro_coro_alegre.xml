@@ -9,7 +9,7 @@
     android:layout_margin="15dp">
 
     <EditText
-        android:id="@+id/buscarc"
+        android:id="@+id/buscarca"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/etestilo"

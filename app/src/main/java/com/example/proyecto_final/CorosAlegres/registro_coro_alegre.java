@@ -29,10 +29,35 @@ import java.util.ArrayList;
 import cz.msebera.android.httpclient.Header;
 
 public class registro_coro_alegre extends AppCompatActivity {
-
+    private ListView lvdatoscal;
+    private AsyncHttpClient clientecal = new AsyncHttpClient();
+    private EditText buscar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_coro_alegre);
+
+        lvdatoscal = findViewById(R.id.lvDatosale);
+        clientecal = new AsyncHttpClient();
+        buscar = findViewById(R.id.buscarca);
     }
+
+    private void obtenerCoros(){
+        String url = "https://appmovilgamez.000webhostapp.com/obtenerCoroAle.php";
+        clientecal.post(url, new AsyncHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                if (statusCode == 200){
+                    //listarCoros(new String(responseBody));
+                }
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+
+            }
+        });
+    }
+
+
 }

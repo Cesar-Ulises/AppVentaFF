@@ -32,13 +32,13 @@ public class registro_coro_ado extends AppCompatActivity {
 
     private ListView lvdatosa;
     private AsyncHttpClient clientea = new AsyncHttpClient();
-
+    private EditText buscar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_coro_ado);
 
-
+        buscar = findViewById(R.id.buscarc);
         lvdatosa = findViewById(R.id.lvDatosRCADO);
 
         clientea = new AsyncHttpClient();
@@ -80,8 +80,24 @@ public class registro_coro_ado extends AppCompatActivity {
 
             }
 
-            ArrayAdapter<CorosAdo> a = new ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, listar);
+            final ArrayAdapter<CorosAdo> a = new ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, listar);
             lvdatosa.setAdapter(a);
+            buscar.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                }
+
+                @Override
+                public void onTextChanged(CharSequence s, int start, int before, int count) {
+                    a.getFilter().filter(s);
+                }
+
+                @Override
+                public void afterTextChanged(Editable s) {
+
+                }
+            });
 
 
         }catch(Exception el){
