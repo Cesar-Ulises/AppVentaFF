@@ -15,6 +15,8 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.proyecto_final.Alabanzas.Alabanzas;
+import com.example.proyecto_final.Alabanzas.Detalle;
 import com.example.proyecto_final.R;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
@@ -121,7 +123,11 @@ public class registro_coro_ado extends AppCompatActivity {
         lvdatosa.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                CorosAdo c = (CorosAdo) parent.getItemAtPosition(position);
 
+                Intent  intent = new Intent(getApplicationContext(), Detalle.class);
+                intent.putExtra("objeto", (Serializable) c);
+                startActivity(intent);
             }
         });
     }
